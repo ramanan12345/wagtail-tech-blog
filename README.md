@@ -15,3 +15,4 @@ In short, we envisioned a blog with simple mechanics. While making it interestin
 ## Contributors
 - Chad Whitman
 - Bradley Martin
+- Tim Allen
