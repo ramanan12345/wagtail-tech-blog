@@ -55,4 +55,12 @@
             }
         }
     }
+    
+    /** Fix spacing issue on profile page for IE11 **/
+    @media only screen and (max-width:767px) {
+        .Grid-cell {
+           flex-basis: 200px;
+        }
+    }
+    
 } /** ./ End i11 **/
