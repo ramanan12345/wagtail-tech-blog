@@ -1,0 +1,62 @@
+.branding {
+    @include horizontal-align(absolute);
+    top:0;
+    width: 100%;
+    z-index:999999;
+    color: $wht;
+    a {
+        color: $menuBlue;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.branding_nav {
+    @include rgba-background(#000, 0.8);  
+    height: 80px;
+    border-bottom: 2px solid $blk;
+    display: none;
+}
+
+.branding_caret {
+    cursor: pointer;
+    z-index:9999999999;
+    @include font-size(76px);
+    .fa {
+        @include horizontal-align(absolute);
+        line-height:18px;
+        top: 82px;
+        color: $blk;
+        opacity: 0.8;
+        &.two {
+            top: 0px;
+        }
+    }
+    @include small {
+        display: none;
+    }
+}
+
+.wharton-logo {
+    @include vertical-align(absolute);
+    padding-left: 30px;
+    height: auto;
+    width: 150px;
+}
+
+.penn-logo {
+    @extend .wharton-logo;
+    width: 116px;
+    right: 0;
+    padding-left: 0px;
+    padding-right: 30px;
+}
+
+.wharton-tech-blog {
+     @include horizontal-align(absolute);
+     padding-top: 27px;
+     font-family: $ab;
+     text-transform: uppercase;
+     @include font-size(24px);
+}

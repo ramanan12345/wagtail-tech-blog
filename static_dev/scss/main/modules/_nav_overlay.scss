@@ -1,0 +1,99 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ *  Nav Overlay
+ *
+ *****/
+
+/*------------------------------------*\
+    #Overlay
+\*------------------------------------*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index:9999;
+    @include rgba-background($menuBlue, 0.89);
+    @include flexbox();
+    @include flex-align(center);
+    @include flex-justify(center);
+    text-align:center;
+    nav,
+    nav a {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: $wht;
+        font-family: $oz;
+        @include font-size(38px);
+        @include small {
+            @include font-size(26px);
+        }
+        .menu {
+            padding-bottom: 8px;
+            @include small {
+                padding-bottom: 8px;
+            }
+        }
+    }
+    nav a {
+        &:hover,
+        &:active,
+        &:focus {
+            background: $wht;
+            color: $blk;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    nav .social-menu a {
+        &:hover,
+        &:active,
+        &:focus {
+            background: none;
+            color: $coolGrey;
+        } 
+    }
+    .social-menu {
+        padding-top: 10px;
+        a {
+            padding-left: 3px;
+            padding-right: 3px;
+            &:hover {
+                padding-left: 3px;
+                padding-right: 3px;
+            }
+        }
+        @include small {
+            padding-top: 10px;
+        }   
+        .fa {
+            @include font-size(25px);
+            color: $wht;
+            &:hover {
+                color: $coolGrey;
+            }
+            @include small {
+               @include font-size(24px); 
+            }
+        }
+       
+    }
+    .menu {
+        img {
+            width: 52px;
+            @include small {
+                width: 38px;
+            }
+        }
+    }
+    .logo-overlay {
+        height: auto;
+        padding-bottom: 10px;
+        @include small {
+            padding-bottom: 5px;
+        }
+    }
+}

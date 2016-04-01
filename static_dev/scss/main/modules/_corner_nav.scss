@@ -1,0 +1,227 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * Corner Nav
+ *    - Position
+ *    - Home Nav
+ *    - Blog Nav
+ *    - Show/Hide
+ *    - Footer Nav
+ *
+ *****/
+
+/*------------------------------------*\
+    #Nav Posiiton
+\*------------------------------------*/
+
+.nav {
+    position: fixed;
+    top: 0;
+    z-index:99999;
+    display:block;
+    border-top: 80px solid $blk;
+    .fa {
+        color: $wht;
+        position: fixed;
+        top: 0;
+        padding-top: 12px;
+        @include font-size(23px);
+        cursor: pointer;
+        &:hover,
+        &:active,
+        &:focus {
+            color: $lightGray;
+        }
+        @include small {
+            padding-top: 12px;
+            @include font-size(19px); 
+        }
+    }    
+}
+
+/*------------------------------------*\
+    #Nav for Home Page
+\*------------------------------------*/
+
+.nav-home {
+    left: 0;
+    border-right: 80px solid transparent;
+    .fa {
+        padding-left: 12px; 
+        @include small {
+            padding-left: 10px;
+        }
+    }
+    @include small {
+        border-top: 65px solid $blk;
+        border-right: 75px solid transparent; 
+    }
+}
+
+/*------------------------------------*\
+    #Nav for Blog Page
+\*------------------------------------*/
+
+.nav-blog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-left: 80px solid transparent;
+    .fa {
+        right: 0;
+        position: absolute;
+        padding-right: 13px;
+        margin-top:-80px;
+        @include small {
+            padding-top: 10px;
+            padding-right: 12px;
+            margin-top:-65px;
+        }
+    }
+    @include small {
+        border-top: 65px solid $blk;
+        border-left: 75px solid transparent; 
+    }
+}
+
+.back-nav {
+    @extend .nav-home;
+    position: fixed;
+    .fa {
+        margin-top:-80px;
+        position: absolute;
+        @include small {
+            margin-top:-65px;
+        }
+    }
+    &.home-icon {
+        position: absolute;
+    }
+}
+
+.next-nav {
+    @extend .nav-blog;
+    position: fixed;
+    .fa {
+        margin-top:-79px;
+        position: absolute;
+        @include small {
+            margin-top:-65px;
+        }
+    }
+}
+
+.nav-blog.pop.blog-post {
+    position: absolute;
+}
+
+/*------------------------------------*\
+    #Next Button
+\*------------------------------------*/
+
+#nav-blog-next {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-left: 80px solid transparent;
+    .fa {
+        right: 0;
+        position: absolute;
+        padding-right: 13px;
+        margin-top:-80px;
+        @include small {
+            padding-top: 10px;
+            padding-right: 12px;
+            margin-top:-65px;
+        }
+    }
+    @include small {
+        border-top: 65px solid $blk;
+        border-left: 75px solid transparent; 
+    }
+}
+
+
+
+/*------------------------------------*\
+    #Show/Hide Toggle
+\*------------------------------------*/
+
+.show {
+  display: block;
+}
+
+/*------------------------------------*\
+    #Footer Corner Nav
+\*------------------------------------*/
+
+.hide,
+.hide-tech {
+  display: none;
+}
+
+.navClose {
+    &:before {
+        @include fawesome("\f0c9");
+        @include font-size(23px);
+        @include small {
+           @include font-size(19px); 
+        }
+    }
+}
+
+.navOpen {
+    &:before {
+        @include fawesome( "\f00d");
+        @include font-size(23px);
+        @include small {
+           @include font-size(21px); 
+        }
+    }
+}
+
+.show-tech {
+    @include flexbox();
+    @include flex-justify(center);
+    @include flex-align(center);
+    cursor: pointer;
+}
+
+.cogs,
+.tech {
+    cursor: pointer;
+    &:hover {
+        color: $menuBlue;
+    }
+}
+
+.cogs {
+    &:before {
+        @include fawesome("\f085");
+        @include font-size(23px);
+    }
+    @include context(767px) {
+        display: none;
+    }
+}
+
+.tech {
+    &:before {
+        @include fawesome("\f00d");
+        @include font-size(25px);
+    } 
+    padding-right: 4px;
+}
+
+.tech-list {
+    cursor: pointer;
+    span {
+        @include font-size(16px);
+    }
+}
+
+.tech-list__intro {
+    @include font-size(16px);
+    color: $menuBlue;
+    display: none;
+}

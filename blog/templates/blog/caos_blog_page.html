@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block title %}UPenn - CAOS Blog - {{self.title }}{% endblock %}
+
+{% block content %}
+<nav id="nav-blog--react"></nav>
+<nav class="nav back-nav home-icon">
+    <a href="/techblog">
+        <i class="fa fa-home"></i>
+    </a>
+</nav>
+<main id="blog_page">
+  <header>
+    {% if self.blog_head_img %}
+        {% image self.blog_head_img original as blog_img %}
+        <div class="blog-image" style="background:url('{{ blog_img.url }}')no-repeat;"/>
+    {% endif %}
+  </header>
+  {% if self.body %}
+    <div class="article-wrap">
+      <article>
+        <time>
+          <div>
+              <span>- {{ self.date }} -</span>
+          </div>
+        </time>
+        <h2>{{ self.title }}</h2>
+        <aside>
+          <div>
+              <label>Author:</label>
+              <span>{{ self.author }}</span>
+          </div>
+          <div>
+              <label>Tags:</label>
+              <span>
+                  {% for categories in self.category %}
+                      {{ categories }}
+                  {% endfor %}
+              </span>
+          </div>
+        </aside>
+        {% for block in self.body %}
+          {% if block.block_type == 'heading' %}
+            <h2>{{ block.value }}</h2>
+          {% elif block.block_type == 'codeblock' %}
+          <div class="relative">
+              <div class="absolute">
+            {{ block.value }}
+              </div>
+          </div>
+          {% elif block.block_type == 'caption' %}
+            <p>{{ block.value }}</p>
+          {% elif block.block_type == 'date' %}
+            <p>{{ block.value }}</p>
+          {% endif %}
+        {% endfor %}
+      </article>
+       {% if self.footer or self.disclaimer %}
+            <div class="endblock-divider">
+               <i class="fa fa-ellipsis-h"></i>
+               <i class="fa fa-ellipsis-h"></i>
+               <i class="fa fa-ellipsis-h"></i>
+               <i class="fa fa-asterisk"></i>
+               <i class="fa fa-ellipsis-h"></i>
+               <i class="fa fa-ellipsis-h"></i>
+               <i class="fa fa-ellipsis-h"></i>
+            </div>
+       {% endif%}
+       {% if self.footer %}
+           <div class="endblock footnote">
+               <h6>Footnotes</h6>
+                {{ self.footer|richtext }}
+           </div>
+       {% endif%}
+       {% if self.disclaimer %}
+           <div class="endblock disclaimer">
+               <h6>Disclaimer</h6>
+                {{ self.disclaimer|richtext }}
+           </div>
+       {% endif%}
+   </div>
+  {% endif %}
+</main>
+{% endblock %}
+{% block extra_js %}
+     <script type="text/javascript" src="{% static 'javascripts/blog.min.js' %}"></script>
+     <script>
+       $('.absolute').each(function() {
+            current_height = $(this).height();
+            $(this).parent().height(current_height);
+        });
+        $( window ).resize(function() {
+            $('.absolute').each(function() {
+                current_height = $(this).height();
+                $(this).parent().height(current_height);
+            });
+        });
+        $("p:contains('-footnote-')").html(function(index, text) {
+            return text.replace(/-footnote-/g,'<span class="aster">[<i class="fa fa-asterisk"></i>]</span>');
+        });
+    </script>
+{% endblock %}

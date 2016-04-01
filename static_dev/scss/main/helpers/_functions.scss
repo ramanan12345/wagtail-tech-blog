@@ -1,0 +1,175 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * - Other Functions
+ *   - Media Queries
+ *   - REM to Pixel Fallback
+ *   - Viewport to Rem to Px Fallback
+ *   - RGBA Background
+ *
+ *****/
+ 
+/*------------------------------------*\
+    #MEDIA QUERIES
+\*------------------------------------*/
+
+@mixin x-small {
+  @media only screen and (max-width:  350px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media only screen and (max-width:  767px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin x-large {
+  @media only screen and (min-width: 1470px) {
+    @content;
+  }
+}
+
+@mixin context($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin min-max($min, $max) {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+/*------------------------------------*\
+    #REM to PIXEL FALLBACK
+\*------------------------------------*/
+   
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/*------------------------------------*\
+    #Viewport to REM to PX fallback
+\*------------------------------------*/
+   
+@function get-vw($target) { 
+  $vw-context: (500*.02) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+  font-size: get-vw($size);
+}
+
+/*------------------------------------*\
+    #RGBA Background
+\*------------------------------------*/
+
+@mixin rgba-background($hexcolor, $opacity: 1) {
+  @if $opacity == 1 {
+    background-color: $hexcolor;
+  }
+  @else {
+    background-color: $hexcolor;
+    background-color: rgba($hexcolor, $opacity); 
+  }
+}
+
+
+/*------------------------------------*\
+    #VERTICAL ALIGN
+\*------------------------------------*/
+
+@mixin vertical-align($position) {
+  position: $position;
+  top: 50%;
+  left: auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*------------------------------------*\
+    #HORIZONTAL ALIGN
+\*------------------------------------*/
+
+@mixin horizontal-align($position) {
+  position: $position;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/*------------------------------------*\
+    #FONT SMOOTHING
+\*------------------------------------*/
+
+@mixin smoothing {
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/*------------------------------------*\
+    #BORDER-RADIUS
+\*------------------------------------*/
+
+@mixin border-radius($radius) {
+    -webkit-border-top: $radius;
+	-webkit-border-top: $radius;
+	-moz-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+/*------------------------------------*\
+    #FONTAWESOME GLYPHS
+\*------------------------------------*/
+
+@mixin fawesome($content) {
+	content: $content;
+	position: relative;
+	display: inline-block;
+	font-style: normal;
+	font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	font: normal normal normal 14px/1 FontAwesome;
+}

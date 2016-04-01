@@ -1,0 +1,94 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * CodeBlock in RichText
+ *
+ *****/
+ 
+/*------------------------------------*\
+    #CodeBlock Styles
+\*------------------------------------*/
+
+.codehilite {
+    border-top: 2px solid darken(#efefef, 15%);
+    border-bottom: 2px solid darken(#efefef, 15%);
+    margin: 10px 50px 45px 50px;
+    padding: 0px 20px;
+    @include border-radius(3px);
+    @include font-size(18px);
+    position: relative;
+    display: block;
+    color: $blk;
+    pre {
+        font-family: $code;
+        padding-bottom: 10px;
+        min-width: 0px;
+        span {
+            line-height: 24px;
+        }
+    }
+    &:after {
+        @include fawesome("\f085");
+        @include smoothing;
+        @include horizontal-align(absolute);
+        bottom: 0;
+        margin-bottom: -13px;
+        @include font-size(24px);
+        color: lighten($brightRed, 2%);
+        text-shadow: 1px 1px #464646;
+        font-weight: 700;
+        background: #f5f7fa;
+        width: 46px;
+        text-align: center;
+        @include small {
+            @include font-size(18px);
+            width: 35px;
+            margin-bottom: -10px;
+        }
+    }
+    @include small {
+        margin: 10px 20px 35px 20px;
+        @include font-size(16px);
+             pre {
+              font-family: $code;
+            span {
+                line-height: 19px;
+            }
+        }
+    }
+/*
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+      height: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      height: 4px;
+      background-color: rgba(0, 0, 0, .5);
+      -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
+*/
+}
+
+/*------------------------------------*\
+    #Correcting weird <pre> flexbox issue
+\*------------------------------------*/
+
+.relative {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.absolute {
+    position: absolute;
+    display: block;
+    overflow:hidden;
+}
+
+.relative,
+.absolute {
+    width: 100%;
+    max-width: 100%;
+}

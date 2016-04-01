@@ -1,0 +1,104 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * About Page Template
+ *    - Profile Pic
+ *    - Grid Wrap
+ *    - Asides
+ *    - Headers
+ *    - Image Spacing
+ *
+ *****/
+
+/*------------------------------------*\
+    #Profile Image
+\*------------------------------------*/
+ 
+.profile__pic {
+    height: 150px;
+    width: 150px;
+    -webkit-background-size:cover !important;
+    -ms-background-size: cover !important;
+    -moz-background-size:cover !important;
+    -o-background-size:cover !important;
+    background-size:cover !important;
+    background-position:100% !important;
+    @include border-radius(100%);
+    margin: 0px 30px;
+}
+
+/*------------------------------------*\
+    #Grids
+\*------------------------------------*/
+ 
+ .grid-wrap {
+     margin: 0 auto;
+     text-align:center;
+     font-family: $alg;
+     margin-top: 60px;
+     max-width: 550px;
+     @include small {
+        margin-top: 45px;
+     }
+ }
+  
+/*------------------------------------*\
+    #Asides
+\*------------------------------------*/
+ 
+ .profile__name {
+    color: $menuBlue;
+    font-family: $oz;
+ }
+ 
+ .profile__bio {
+     max-width: 450px;
+ }
+ 
+ .profile__position {
+    padding: 0px 30px;
+    font-family: $oz;
+    font-weight: 300;
+ }
+ 
+/*------------------------------------*\
+    #Headers
+\*------------------------------------*/
+ 
+h3.title__sub {
+    margin: 0px;
+    text-transform: capitalize;
+    @include flexbox()
+    @include flex-justify(center);
+    @include flex-align(center);
+    font-family: $alg;
+    margin-bottom: 27px;
+    color: lighten(#000000, 20%);
+}
+
+#blog_page {
+    h2.title__about {
+        text-transform: uppercase;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+/*------------------------------------*\
+    #Image Spacing
+\*------------------------------------*/
+
+#blog_page header .blog-image.about-page {
+    @include medium {
+        height: 325px;
+    }
+    @include small {
+        height: 200px;
+    }
+    @include context(425px) {
+        height: 160px;
+    }
+    @include context(399px) {
+        height: 136px;
+    }
+}

@@ -1,0 +1,60 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * Global Template Styles
+ *    - Main
+ *    - 
+ *****/
+ 
+
+/*------------------------------------*\
+    #Header
+\*------------------------------------*/
+
+h2,
+h2 a {
+    @include flexbox();
+    font-family: $oz;
+    font-weight: 700;
+    @include font-size(47px);
+    margin: 0px;
+    color: $wht;
+    z-index: 999;
+    text-align:center;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+}
+
+h2 a{
+    &:hover,
+    &:focus,
+    &:active {
+        background: $wht;
+        color: $blk;
+        cursor:pointer;
+        @include small {
+            background: none;
+            color: $wht;
+            text-decoration: underline;
+        }
+    } 
+}
+
+h2 a {
+    @include large {
+        @include font-size(40px);
+    }
+    @include min-max(993px, 1200px) {
+        @include font-size(35px);
+    }
+    @include medium {
+        @include font-size(31px);
+    }
+    @include small {
+        @include flexbox();
+        @include font-size(27px); 
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}

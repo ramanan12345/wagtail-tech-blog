@@ -1,0 +1,106 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * Footer
+ *    - Footer
+ *    - Container
+ *    - Logo
+ *    - Font Awesome
+ *    - Footer Right
+ *
+ *****/
+ 
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+
+footer {
+    background: $blk;
+    font-family: $alg;
+    color: $wht;
+    width: 100%;
+    z-index:99999999;
+}
+
+/*------------------------------------*\
+    #CONTAINER
+\*------------------------------------*/
+
+footer {
+    .container {
+        padding: 20px 20px 10px 20px;
+        @include flexbox();
+        @include flex-justify(space-between);
+        @include small {
+            @include flex-direction(column);
+            @include flex-align(center);
+        }
+        @include context(767px) {
+            padding: 25px 20px 0px 20px; 
+        }
+    }
+}
+
+/*------------------------------------*\
+    #Logo
+\*------------------------------------*/
+
+footer {
+    .logo {
+        height: auto;
+        width: 125px;
+    }
+}
+
+/*------------------------------------*\
+    #Font Awesome
+\*------------------------------------*/
+
+footer {
+    .fa {
+        color: $menuBlue;
+        &.fa-battery-full {
+          @include font-size(20px);
+        }
+        &.fa-life-ring {
+            @include font-size(16px);
+        } 
+    }
+}
+
+/*------------------------------------*\
+    #Footer Right
+\*------------------------------------*/
+
+.footer__right {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-align(center); 
+    @include flex-flow(row, wrap);
+    padding-bottom: 10px;
+    span {
+        @include font-size(14px);
+        padding: 0px 0px;
+    }
+    .tech__title {
+        @extend span;
+        color: lighten($menuBlue, 10%);
+        padding-right: 3px;
+        font-weight: 700;
+
+    }
+    div {
+        @include font-size(14px);
+        a {
+            color: $wht;
+            &:hover,
+            &:active,
+            &:focus {
+                color: $menuBlue;
+            }
+        }
+    }
+    @include small {
+        padding: 10px 0px;
+    }
+}

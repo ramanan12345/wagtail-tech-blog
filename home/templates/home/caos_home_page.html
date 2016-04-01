@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    {% if blogs.has_next %}
+        <nav id="nav-blog-next"></nav>
+        <nav class="nav next-nav">
+            <a href="?page={{ blogs.next_page_number }}">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </nav>
+    {% else %}
+        <nav id="nav-blog--react"></nav>
+    {% endif %}
+    
+    {% if blogs.has_previous %}
+        <nav class="nav back-nav">
+            <a href="?page={{ blogs.previous_page_number }}">
+                 <i class="fa fa-chevron-left"></i>
+            </a>
+        </nav>
+        {% else %}
+        <nav id="nav-home--react"></nav><!-- React.js -->
+    {% endif %}
+  <main id="home_page">
+    {% for rl in blogs %}
+        {% image rl.blog_head_img original as tmp_photo %}
+        <article class="item-1" style="background:url('{{ tmp_photo.url }}') no-repeat;">
+            <div class="post-overlay"></div>
+            <h2><a href="{{ rl.url }}">{{ rl.title }}</a></h2>
+            <aside>
+            <div>
+                <i class="fa fa-tags"></i>
+                {% for category in rl.category %}
+                    <a href="/techblog/category/{{ category|slugify }}">{{ category }}</a>
+                {% endfor %}
+            </div>
+            <div><i class="fa fa-user"></i><a href="/techblog/author/{{ rl.author|slugify }}">{{ rl.author }}</a></div>
+            <div><i class="fa fa-clock-o"></i>{{ rl.to_read }} Minute Read</div>
+            </aside><!-- .end / aside -->
+        </article><!-- .end / article -->
+    {% endfor %}
+  </main>
+{% endblock %}
+{% block extra_js %}
+    <script type="text/javascript" src="{% static 'javascripts/home.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'javascripts/pager.min.js' %}"></script>
+{% endblock %}

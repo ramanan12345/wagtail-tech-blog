@@ -1,0 +1,34 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="Grid">
+{% for profile in Profiles|slice:"0:3" %}
+    {% image profile.profile_img original as tmp_photo %}
+         <div class="Grid-cell Grid--gutters">
+            <div class="profile__pic" style="background:url('{{ tmp_photo.url }}') no-repeat;"></div>
+            <div class="profile__name">{{ profile.name }}</div>
+            <div class="profile__position">{{ profile.position }}</div>
+        </div>
+{% endfor %}
+</div>
+ 
+<div class="Grid">
+{% for profile in Profiles|slice:"3:6" %}
+    {% image profile.profile_img original as tmp_photo %}
+        <div class="Grid-cell Grid--gutters">
+            <div class="profile__pic" style="background:url('{{ tmp_photo.url }}') no-repeat;"></div>
+            <div class="profile__name">{{ profile.name }}</div>
+            <div class="profile__position">{{ profile.position }}</div>
+        </div>
+{% endfor %}
+</div>
+ 
+<div class="Grid">
+{% for profile in Profiles|slice:"6:9" %}
+    {% image profile.profile_img original as tmp_photo %}
+        <div class="Grid-cell Grid--gutters">
+            <div class="profile__pic" style="background:url('{{ tmp_photo.url }}') no-repeat;"></div>
+            <div class="profile__name">{{ profile.name }}</div>
+            <div class="profile__position">{{ profile.position }}</div>
+        </div>
+{% endfor %}
+</div>

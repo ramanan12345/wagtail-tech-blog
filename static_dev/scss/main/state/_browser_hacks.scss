@@ -1,0 +1,58 @@
+/*****
+ * TABLE OF CONTENTS
+ *
+ * IE Specific for 11 Flexbox support
+ *    - 11
+ * Safari
+ *     - 7, 8
+ *
+ *****/
+ 
+/*------------------------------------*\
+    #ie11
+\*------------------------------------*/
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /** Body **/
+    body {
+        display: block;
+        min-height: 100%;
+    }
+    
+    /** Headers **/
+    #home_page {
+        h2,
+        h2 a {
+            @include small {
+               @include flex(1);
+               @include flex-align(center);
+               @include flex-justify(center);
+               @include flex-flow(row, wrap);
+               width: 50%;
+          }
+          @include x-small {
+                @include flex(1);
+               @include flex-align(center);
+               @include flex-justify(center);
+               @include flex-flow(row, wrap);
+               width: 80%;
+          }
+        }
+        
+        h2 {
+            &:hover {
+                background: none;
+            }
+        }
+    }
+    
+    /** Aside **/
+    #home_page {
+        display: block !important;
+        @include small {
+            aside {
+                display: none !important;
+            }
+        }
+    }
+} /** ./ End i11 **/

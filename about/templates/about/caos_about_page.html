@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load profiles %}
+
+{% block title %}UPenn - CAOS Blog - {{self.title }}{% endblock %}
+
+{% block content %}
+<nav id="nav-blog--react"></nav>
+<nav class="nav back-nav home-icon">
+    <a href="/techblog">
+        <i class="fa fa-home"></i>
+    </a>
+</nav>
+<main id="blog_page">
+  <header>
+    {% if self.about_head_img %}
+        {% image self.about_head_img original as about_img %}
+        <div class="blog-image" style="background:url('{{ about_img.url }}')no-repeat;"/>
+    {% endif %}
+  </header>
+      <div class="article-wrap">
+        <article>
+          <time>
+            <div>
+                <span>- {{ self.date }} -</span>
+            </div>
+          </time>
+          <h2>{{ self.title }}</h2>
+          <aside>
+            <div>
+                <label class="flexit">- Brought to you by the CAOS Team -</label>
+                <span class="summary-block">{{ self.summary }}</span>
+            </div>
+          </aside>
+          <div class="grid-wrap">
+              {% profiles %}
+          </div>
+        </article>
+     </div>
+</main>
+{% endblock %}
+{% block extra_js %}
+     <script type="text/javascript" src="{% static 'javascripts/blog.min.js' %}"></script>
+{% endblock %}
