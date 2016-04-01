@@ -23,3 +23,4 @@ Tech Blog was built using the following:
 - <a href="https://github.com/twinsen43">Bradley Martin</a>
 - <a href="https://github.com/FlipperPA">Tim Allen</a>
 - <a href="https://github.com/sturoscy">Steve Turoscy</a>
+- <a href="https://github.com/i-ozymandias-i">Mikhail Oza</a>
