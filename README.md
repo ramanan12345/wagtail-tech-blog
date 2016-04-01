@@ -11,7 +11,6 @@ Tech Blog was built using the following:
 
 - <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a>
 - <a href="https://github.com/django/django">Django</a>
-- jQuery
 - <a href="https://facebook.github.io/react">React.js</a> (just for a few things)
 - <a href="http://sass-lang.com">SASS</a>
 - HTML5 and CSS3
