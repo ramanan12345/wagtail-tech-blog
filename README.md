@@ -1,5 +1,5 @@
 ## The Wharton Tech Blog
-A blog about the technology we use to build applications at Wharton, with an emphasis on our tech team's current stack (e.g., Django, Python, React.js, SASS, HTML5, CSS3, Gulp, etc.). We try to post 1 or 2 new articles each month.
+The Wharton Tech Blog is a blog about the technology we use to build applications at Wharton, with an emphasis on our tech team's current stack (e.g., Django, Python, React.js, SASS, HTML5, CSS3, Gulp, etc.). We try to post 1 or 2 new articles each month.
 
 ## About the Blog
 
