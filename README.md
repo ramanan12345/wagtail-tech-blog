@@ -4,7 +4,7 @@ A blog about the technology we use to build applications at Wharton, with an emp
 ## About the Blog
 
 #### Made with Wagtail CMS
-We were introduced to <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a> during <a href="https://twitter.com/djangocon">Djangocon</a> 2015 in Austin, TX and were  impressed by it, so we decided to create a project using it. We like, for example, how it is "developer friendly" and that it's built on top of <a href="https://www.djangoproject.com/">Django</a>. The admin is also powerful and easy to use.
+We were introduced to <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a> during <a href="https://twitter.com/djangocon">Djangocon</a> 2015 in Austin, TX and were  impressed by it, so we decided to create a project using it. We like, for example, how it is developer friendly and that it's built on top of <a href="https://www.djangoproject.com/">Django</a>. The admin is also powerful and easy to use.
 
 #### Other Technology
 Tech Blog was built using the following:
