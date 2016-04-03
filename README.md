@@ -1,14 +1,14 @@
 ## The Wharton Tech Blog
-The Wharton Tech Blog is a blog about the technology we use to build applications at Wharton, with an emphasis on our tech team's current stack (e.g., Django, Python, React.js, SASS, HTML5, CSS3, Gulp, etc.). We try to post 1 or 2 new articles each month.
+The Wharton Tech Blog is a blog about the tech we use to build applications at Wharton, with an emphasis on our current stack (e.g., Django, Python, React.js, SASS, HTML5, CSS3, REST, Gulp, etc.). We try to post one or two new articles each month. Check it out here: <a href="https://apps.wharton.upenn.edu/techblog">https://apps.wharton.upenn.edu/techblog</a>.
 
 ## About the Blog
 
 #### Made with Wagtail CMS
-We were introduced to <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a> during <a href="https://twitter.com/djangocon">Djangocon</a> 2015 in Austin, TX and were  impressed by it, so we decided to create a project using it. We like, for example, how it is developer friendly and that it's built on top of <a href="https://www.djangoproject.com/">Django</a>. The admin is also powerful and easy to use.
+We were introduced to <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a> during <a href="https://twitter.com/djangocon">Djangocon</a> 2015 in Austin, TX and were impressed by it, so we decided to create a project using it. 
 
-#### Other Technology
-Tech Blog was built using the following:
+Wagtail gave us content management (e.g., textfields, images, etc.), including one of the best mechanisms we've seen in a CMS for content creation called "<a href="https://wagtail.io/features/streamfield">Streamfield</a>," a beautiful admin interface and powerful permission tools. Plus, it's built on the <a href="https://www.djangoproject.com/">Django Framework</a> (it's just a Django app) and written in Python. Though Wagtail provides key features, it allows the developer to do everything else. And, as developers, we like that.
 
+#### Quicklist of Tech We Used
 - <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a>
 - <a href="https://github.com/django/django">Django</a>
 - <a href="https://facebook.github.io/react">React.js</a>
