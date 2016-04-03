@@ -6,7 +6,7 @@ The Wharton Tech Blog is a blog about the tech we use to build applications at W
 #### Made with Wagtail CMS
 We were introduced to <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a> during <a href="https://twitter.com/djangocon">Djangocon</a> 2015 in Austin, TX and were impressed by it, so we decided to create a project using it. 
 
-Wagtail gave us content management (e.g., textfields, images, etc.), including one of the best mechanisms we've seen in a CMS for content creation called "<a href="https://wagtail.io/features/streamfield">Streamfield</a>," a beautiful admin interface and powerful permission tools. Plus, it's built on the <a href="https://www.djangoproject.com/">Django Framework</a> (it's just a Django app) and written in Python. Though Wagtail provides key features, it allows the developer to do everything else. And, as developers, we like that.
+Wagtail gave us content management (e.g., textfields, images, etc.), including one of the best mechanisms we've seen in a CMS for content creation called "<a href="https://wagtail.io/features/streamfield">Streamfield</a>," a beautiful admin interface and powerful permission tools. Plus, it's built on the <a href="https://www.djangoproject.com/">Django Framework</a> (Wagtail is just a Django app) and written in Python. Though Wagtail provides key features, it allows the developer to do everything else. And, as developers, we like that.
 
 #### Quicklist of Tech We Used
 - <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a>
