@@ -13,7 +13,7 @@ Wagtail gave us content management (e.g., textfields, images, etc.), including o
 - <a href="https://github.com/django/django">Django</a>
 - <a href="https://facebook.github.io/react">React.js</a>
 - <a href="http://sass-lang.com">SASS</a>
-- HTML5 and CSS3
+- HTML5 and CSS3. The layout is completely <a href="https://rachelandrew.co.uk/presentations/new-css-layout">Flexbox</a> based.
 - <a href="http://gulpjs.com">Gulp</a> for task management
 - All header images from <a href="https://unsplash.com">Unsplash</a>
 
