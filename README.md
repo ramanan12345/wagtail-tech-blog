@@ -10,6 +10,7 @@ Wagtail gave us content management (e.g., textfields, images, etc.), including o
 
 #### Quicklist of Tech We Used
 - <a href="https://github.com/torchbox/wagtail">Wagtail CMS</a>
+- The <a href="https://github.com/FlipperPA/wagtail-components">Wagtail Components</a> plugin by <a href="https://github.com/FlipperPA">Tim Allen</a>
 - <a href="https://github.com/django/django">Django</a>
 - <a href="https://facebook.github.io/react">React.js</a>
 - <a href="http://sass-lang.com">SASS</a>
