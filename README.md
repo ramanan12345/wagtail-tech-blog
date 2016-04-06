@@ -20,6 +20,9 @@ Wagtail gave us content management (e.g., textfields, images, etc.), including o
 #### Wagtail Plugins Used
 - The <a href="https://github.com/FlipperPA/wagtail-components">Wagtail Components</a> plugin by <a href="https://github.com/FlipperPA">Tim Allen</a> and <a href="https://github.com/frankwiles">Frank Wiles</a>
 
+#### Wagtail Showcase
+- Our blog is currently being showcased on the <a href="http://madewithwagtail.org">Made with Wagtail</a> site.
+
 ## Contributors
 - <a href="https://github.com/chadwhitman">Chad Whitman</a>
 - <a href="https://github.com/bradma">Bradley Martin</a>
